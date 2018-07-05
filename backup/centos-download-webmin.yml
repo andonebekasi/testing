@@ -1,0 +1,7 @@
+- hosts: centos
+  user: root
+  tasks:
+  - name: ensure wget present
+    yum: name=wget state=present
+  - name: download webmin
+    shell: wget https://prdownloads.sourceforge.net/webadmin/webmin-1.881.tar.gz

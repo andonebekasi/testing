@@ -1,0 +1,9 @@
+- hosts: ubuntu 
+  become: yes
+  become_user: root
+  tasks:
+   - name : Install httping
+     apt :
+      name: httping
+      state: present
+      update_cache: true

@@ -1,0 +1,9 @@
+- hosts: debian  
+  become: yes
+  become_user: root
+  tasks:
+   - name : Install mc
+     apt :
+      name: mc
+      state: present
+      update_cache: true

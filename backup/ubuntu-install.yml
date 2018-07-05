@@ -1,0 +1,18 @@
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+   - name : Install list of packages
+     apt : name={{item}} state=present
+     with_items:
+          - apache2
+          - mysql-server
+          - php 
+          - libapache2-mod-php 
+          - php-mcrypt 
+          - php-mysql
+          - phpmyadmin
+          - apache2-utils
+          - postgresql
+          - postgresql-contrib
+          - snmpd

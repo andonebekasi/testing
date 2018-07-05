@@ -1,0 +1,14 @@
+- hosts: centos
+  become: yes
+  become_user: root
+  tasks:
+   - name : Install list of packages
+     yum : name={{item}} state=present
+     with_items:
+          - httpd
+          - mariadb-server 
+          - mariadb 
+          - net-snmp 
+          - net-snmp-utils          
+          
+

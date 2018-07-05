@@ -1,0 +1,14 @@
+- hosts: debian
+  become: yes
+  become_user: root
+  tasks:
+   - name : Install list of packages
+     apt : name={{item}} state=present
+     with_items:
+          - apache2
+          - mariadb-server 
+          - mariadb-client
+          - postgresql 
+          - snmpd 
+                   
+
